@@ -4,7 +4,7 @@ import time
 num_questions = 5
 min_num = 201
 max_num = 999
-time_limit = 45
+time_limit = 300
 time_taken = 0
 
 
@@ -28,7 +28,7 @@ for i in range(num_questions):
     time_taken = time.time() - start_time
     if time_taken > time_limit:
         break
-    user_answer = int(input(f"What is {num1} * {num2}? "))
+    user_answer = int(input(f"What is {num1} * {num2}? \n"))
     
     user_answers.append(user_answer)
 

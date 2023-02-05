@@ -42,9 +42,9 @@ class QuizApp(tk.Tk):
             
             l2 = tk.Label(self, text = f"Correct Answer is {self.real_answers[i]} ")
             l2.grid(row = i, column = 3)
-              
+        total_time = time.time() - self.start_time
         messagebox.showinfo(title = "Info", message = f"Quiz Score. Congratulations, You have completed the quiz! \n \
-                        Your score is {self.score} out of {self.total_questions} ")
+                        Your score is {self.score} out of {self.total_questions}. \nYou took {int(total_time)} seconds ")
 
         b2 = tk.Button(self, text = "Reset", command=self.reset_quiz)
         b2.grid(row = i+1, column=3)
@@ -56,6 +56,7 @@ class QuizApp(tk.Tk):
         self.entry_answer = []
         self.total_questions = 10
         self.create_widgets()
+        self.start_time = time.time()
 
     def close_app(self):
         self.destroy()
