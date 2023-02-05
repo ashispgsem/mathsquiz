@@ -14,7 +14,7 @@ real_answers = []
 user_answers =[]
 
 start_time = time.time()
-print(f"Start time is {start_time}")
+print("\n\n********************Let us start the game**************************")
 score = 0
 for i in range(num_questions):
     num1 = random.randint(min_num, max_num)
@@ -37,14 +37,20 @@ for i in range(num_questions):
         score += 1
     else:
         print("Incorrect.")
-    print (f"Remaining Time: {time_limit-time_taken}")
+    print (f"Remaining Time: {int(time_limit-time_taken)}")
+
 total_time = (time.time() - start_time)
+
 print(f"You scored {score}/{num_questions}.")
-print(f"You have taken {total_time}. Could you try improving next time!")
+
 
 print("See How did it\n")
 print("NUMBER1 NUMBER2 RIGHT_ANSWER UR_ANSWER \n")
 
 for i in range(num_questions):
     print(f"{number1[i]}   X   {number2[i]}  =    {real_answers[i]}      {user_answers[i]}")
+
+print(f"  You scored {score}/{num_questions}.")
+print(f"\n   You have taken {int(total_time)} seconds. \n  Let us improve it even further next time!")
+print("\n\n********************Game Over**************************")
 
