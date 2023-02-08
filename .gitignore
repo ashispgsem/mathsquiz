@@ -1,1 +1,4 @@
 *.ini
+pdf/py310/
+hashes.txt
+.DS_Store

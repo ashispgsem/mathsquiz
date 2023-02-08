@@ -1,13 +1,14 @@
-import PyPDF2
-
+from pypdf import PdfReader
 def extract_text_from_pdf(filename):
-    with open(filename, 'rb') as f:
-        pdf = PyPDF2.PdfFileReader(f)
-        text = ''
-        for page in range(pdf.getNumPages()):
-            text += pdf.getPage(page).extractText()
-        return text
+
+    reader = PdfReader(filename)
+    text = ''
+    for i in range(len(reader.pages)):
+        text += reader.pages[i].extract_text()
+    print(f"Number of Pages: {len(reader.pages)}")
+    return text
 
 filename = 'sample.pdf'
 text = extract_text_from_pdf(filename)
-print(text)
+print(f"  \n Text from file ********** \n {text} \n")
+
